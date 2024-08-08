@@ -1,0 +1,22 @@
+<div fxLayout="row wrap" class="relative padding-1em full-dvh" fxLayoutAlign="start stretch" [fxShow]="true">
+  <div fxLayout="column wrap" fxFlex="100%" fxLayoutAlign="start stretch" [fxShow]="true">
+    <div *ngIf="page.showSpinner" class="spinner absolute">
+      <mat-spinner></mat-spinner>
+    </div>
+    <div fxLayout="row wrap" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true"><mat-card *ngFor="let card of page.cardItems" class="m-b-1em">
+        <mat-card-title>Title</mat-card-title>
+
+        <mat-card-subtitle>Description</mat-card-subtitle>
+
+        <img mat-card-image ngClass.xs="width-270" imgSrc="Web/Images/evaluation.jpg">
+
+        <mat-card-footer align="left">
+          <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-icon class="pointer" (click)="editItem(card)">edit</mat-icon><mat-icon class="pointer" (click)="deleteItem(card)">delete</mat-icon></div>
+        </mat-card-footer>
+      </mat-card></div>
+    <div *ngIf="page.cardItems.length &gt; 0">
+      <mat-paginator [length]="page.cardItems.length" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page">
+      </mat-paginator>
+    </div>
+  </div>
+</div>

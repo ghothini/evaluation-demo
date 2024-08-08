@@ -1,0 +1,54 @@
+/*Importing default angular material css theme. */
+
+@import "@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import "nDefaults.scss";
+
+// My custom reusable classes
+
+.full-dvh {
+    height: 100dvh;
+}
+
+// colors
+
+.color-red {
+    color: red;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.relative {
+    position: relative;
+}
+
+.m-b-1em {
+    margin-bottom: 1em;
+}
+
+.padding-1em {
+    padding: 1em;
+}
+
+.mat-card-image {
+    width: 290px !important;
+}
+
+.width-270 {
+    width: 270px !important;
+}
+
+.spinner {
+    left: calc(50% - 50px);
+    top: calc(50% - 50px);
+    z-index: 1;
+}
+
+.text-area-container {
+    height: 102px;
+}

@@ -1,0 +1,22 @@
+{
+    "routes": [
+        {
+            "path": "register",
+            "component": "registerComponent"
+        },
+        {
+            "path": "landing",
+            "component": "landingComponent"
+        },
+        {
+            "path": "''",
+            "redirectTo": "/register",
+            "pathMatch": "full",
+            "default": true
+        },
+        {
+            "path": "**",
+            "component": "PageNotFoundComponent"
+        }
+    ]
+}

@@ -1,0 +1,13 @@
+{
+    "displayName": "evaluation",
+    "appName": "evaluation",
+    "description": "Frontend for evaluation",
+    "lastModified": "2024-08-08T09:10:26.899Z",
+    "imgSourcePath": "",
+    "version": "1.0.0",
+    "appType": "uiOnly",
+    "templateName": "blank",
+    "createDate": "2024-08-08T09:10:26.231Z",
+    "analyticsId": "b0c30479-458e-22e9-be65-8202bc1d3c24",
+    "createdStudioVersion": "9.2.3"
+}

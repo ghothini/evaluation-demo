@@ -1,0 +1,36 @@
+<div fxLayout="row wrap" class="relative full-dvh" fxLayoutAlign="center center" [fxShow]="true">
+  <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+    <div *ngIf="page.showSpinner" class="spinner absolute">
+      <mat-spinner></mat-spinner>
+    </div>
+    <form [formGroup]="page.cardForm">
+      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+          <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+            <input matInput type="text" placeholder="Title" [required]="true" formControlName="title">
+            <mat-error align="start" *ngIf="(page.cardForm.controls.title?.touched) &amp;&amp; (page.cardForm.controls.title?.errors?.required)">Title is <b>required</b></mat-error><mat-error align="start" *ngIf="(page.cardForm.controls.title?.touched) &amp;&amp; (page.cardForm.controls.title?.errors?.pattern)">Min characters is <b>18</b> max is <b>25</b></mat-error>
+          </mat-form-field>
+        </div>
+        <div fxLayout="column wrap" class="text-area-container" fxLayoutAlign="start stretch" [fxShow]="true"><mat-form-field [floatLabel]="&apos;auto&apos;">
+            <mat-label></mat-label>
+            <textarea matInput formControlName="description" placeholder="Description" [required]="true"></textarea>
+          </mat-form-field>
+          <div class="color-red">
+            <small *ngIf="(page.cardForm.controls.description?.touched) &amp;&amp; (page.cardForm.controls.description?.errors?.required)">Description is <b>required</b></small>
+            <small *ngIf="(page.cardForm.controls.description?.touched) &amp;&amp; (page.cardForm.controls.description?.errors?.pattern)">Min characters is <b>20</b> max is <b>80</b></small>
+          </div>
+        </div>
+        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div fxLayout="row wrap" fxLayoutGap=".5em" fxLayoutAlign="start stretch" [fxShow]="true">
+            <div>
+              Upload File</div><mat-checkbox id="checkbox" (change)="uploadFile($event)" [checked]="page.checkboxIsChecked" value="page.checkboxIsChecked" [required]="false"></mat-checkbox>
+            <div>
+              <input type="file" (change)="choosenFile($event)">
+            </div>
+          </div>
+        </div>
+        <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-button (click)="page.cardForm.reset()">Cancel</button><button mat-button (click)="submit()">Submit</button></div>
+      </div>
+    </form>
+  </div>
+</div>

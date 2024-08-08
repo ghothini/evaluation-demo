@@ -1,0 +1,15 @@
+{
+    "classes": [
+        "full-dvh",
+        "color-red",
+        "pointer",
+        "absolute",
+        "relative",
+        "m-b-1em",
+        "padding-1em",
+        "mat-card-image",
+        "width-270",
+        "spinner",
+        "text-area-container"
+    ]
+}
